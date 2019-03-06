@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_margin="15dp"
+                                   android:id="@+id/cardview"
+                                   android:foreground="?attr/selectableItemBackground"
+
+                                   app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                       xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="match_parent"
+
+    >
+
+
+        <ImageView
+                android:id="@+id/img_petits_pois"
+                android:layout_width="match_parent"
+                android:layout_height="248dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+
+        />
+
+        <TextView
+                android:id="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="Petits pois et Carottes"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/img_petits_pois"
+                app:layout_constraintTop_toBottomOf="@id/img_petits_pois"/>
+
+        <TextView
+                android:id="@+id/product_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cassegrain"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+
+                app:layout_constraintStart_toStartOf="@id/product_name"
+                app:layout_constraintTop_toBottomOf="@id/product_name"/>
+
+        <ImageView
+                android:layout_width="25dp"
+                android:layout_height="16dp"
+                android:id="@+id/ic_ranking"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="30dp"
+
+                app:layout_constraintTop_toBottomOf="@id/product_brand"
+                app:layout_constraintStart_toStartOf="@id/product_brand"
+                app:srcCompat="@drawable/ic_ranking"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nutriscore_text"
+                android:text="Nutriscore : A"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginLeft="10dp"
+
+                app:layout_constraintTop_toBottomOf="@id/product_brand"
+                app:layout_constraintStart_toEndOf="@id/ic_ranking"
+
+        />
+
+        <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:id="@+id/ic_calories"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+
+
+                app:layout_constraintTop_toBottomOf="@id/product_brand"
+                app:layout_constraintStart_toEndOf="@id/nutriscore_text"
+                app:srcCompat="@drawable/ic_calories"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cal_text"
+                android:text="234 kCal/part"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginLeft="10dp"
+
+                app:layout_constraintTop_toBottomOf="@id/product_brand"
+                app:layout_constraintStart_toEndOf="@id/ic_calories"
+
+        />
+
+        <ImageView
+                android:layout_width="18dp"
+                android:layout_height="32dp"
+                android:id="@+id/ic_bookmark"
+                android:layout_margin="15dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_petits_pois"
+                app:srcCompat="@drawable/ic_nav_bar_bookmarks"
+
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

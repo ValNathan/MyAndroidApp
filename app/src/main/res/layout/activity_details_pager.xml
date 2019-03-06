@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                                     android:layout_width="match_parent"
+                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                     android:id="@+id/pager"
+                                     android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:id="@+id/image"
+            android:src="@drawable/placeholder"
+            android:scaleType="centerCrop"
+            android:contentDescription="Image"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titre"
+            android:text="Petits pois et carottes"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cassegrain"
+            android:text="Cassegrain"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/titre"
+            app:layout_constraintStart_toStartOf="@id/titre"
+    />
+
+    <ImageView
+            android:layout_width="78dp"
+            android:layout_height="42dp"
+            android:id="@+id/nutri_score"
+            android:src="@drawable/nutri_score_e"
+            android:layout_marginLeft="180dp"
+            app:layout_constraintTop_toBottomOf="@id/titre"
+            app:layout_constraintStart_toEndOf="@id/cassegrain"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/codebarre"
+            android:layout_marginTop="20dp"
+            android:text="Code Barres : "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/cassegrain"
+            app:layout_constraintTop_toBottomOf="@id/cassegrain"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quantite"
+            android:text="Quantité : "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/codebarre"
+            app:layout_constraintTop_toBottomOf="@id/codebarre"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/venduen"
+            android:text="Vendu en : "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/quantite"
+            app:layout_constraintTop_toBottomOf="@id/quantite"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ingredients"
+            android:layout_marginTop="20dp"
+            android:text="Ingrédients : "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/venduen"
+            app:layout_constraintTop_toBottomOf="@id/venduen"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/substances"
+            android:layout_marginTop="20dp"
+            android:text="Substances allergènes : "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/ingredients"
+            app:layout_constraintTop_toBottomOf="@id/ingredients"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/additifs"
+            android:layout_marginTop="20dp"
+            android:text="Additifs : "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/substances"
+            app:layout_constraintTop_toBottomOf="@id/substances"
+    />
+
+</androidx.viewpager.widget.ViewPager>

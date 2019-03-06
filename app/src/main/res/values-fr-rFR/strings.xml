@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Mes produits</string>
+    <string name="name"><![CDATA[<b> Petits pois et carottes</b>]]></string>
+    <string name="barcode"><![CDATA[<b> Code Barres</b> : %1$s]]> </string>
+    <string name="quantity"><![CDATA[<b> Quantité</b> : %1$s]]> </string>
+    <string name="sold"><![CDATA[<b> Vendu en </b> : %1$s]]> </string>
+    <string name="ingredients"><![CDATA[<b> Ingrédients</b> : %1$s]]> </string>
+    <string name="substances"><![CDATA[<b> Substances allergènes</b> : %1$s]]> </string>
+    <string name="additives"><![CDATA[<b> Additifs</b> : %1$s]]> </string>
+
+    <string name="nutri"><![CDATA[Nutriscore : %1$s]]></string>
+    <string name="kcal"><![CDATA[%1$s kCal/part]]></string>
+
+    <string name="main_menu">Menu principal</string>
+    <string name="details">Détails</string>
+</resources>
