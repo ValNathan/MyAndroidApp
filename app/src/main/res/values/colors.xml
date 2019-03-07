@@ -8,4 +8,8 @@
     <color name="icon_selected">#0EAD69</color>
     <color name="icon_default">#E63E11</color>
     <color name="black">#000000</color>
+    <color name="nutrient_level_low">#AACC55</color>
+    <color name="nutrient_level_moderate">#EEEE44</color>
+    <color name="nutrient_level_high">#FF6666</color>
+    <color name="main_navigation_bg">#EBEBEB</color>
 </resources>

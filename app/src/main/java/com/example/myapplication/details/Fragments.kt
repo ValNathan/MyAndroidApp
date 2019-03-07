@@ -1,11 +1,14 @@
-package com.example.myapplication
+package com.example.myapplication.details
 
 import android.os.Bundle
+import android.text.Html
+import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.activity_details.*
+import com.example.myapplication.Product
+import com.example.myapplication.R
 import kotlinx.android.synthetic.main.fiche.*
 import java.lang.Exception
 
@@ -25,17 +28,23 @@ open class BaseFragment : Fragment(){
         }
 
         product = arguments!!.getParcelable<Product>(ARG_PRODUCT)!!
+
+
     }
+
 
 }
 
-class Fragment1 : BaseFragment(){
+class Fiche : BaseFragment(){
     companion object {
-        fun newInstance(product: Product) : Fragment1 {
-            val fragment = Fragment1()
+        fun newInstance(product: Product) : Fiche {
+            val fragment = Fiche()
             val args = Bundle()
             args.putParcelable(ARG_PRODUCT, product)
             fragment.arguments = args
+
+
+
             return fragment
         }
     }
@@ -46,14 +55,26 @@ class Fragment1 : BaseFragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        titre.text = product.nom
+        codebarre.text = getString(R.string.barcode, product.barcode).toHtml()
+        quantite.text = getString(R.string.quantity, product.Quantite).toHtml()
+        venduen.text = getString(R.string.sold, product.Vendu).toHtml()
+        ingredients.text = getString(R.string.ingredients, product.ingredigent).toHtml()
+        substances.text = getString(R.string.substances, product.subsAllergene).toHtml()
+        additifs.text = getString(R.string.additives, product.additifs).toHtml()
+    }
+
+    fun String.toHtml(): Spanned {
+        return Html.fromHtml(this)
     }
 
 }
 
-class Fragment2 : BaseFragment(){
+class Nutrition : BaseFragment(){
     companion object {
-        fun newInstance(product: Product) : Fragment2 {
-            val fragment = Fragment2()
+        fun newInstance(product: Product) : Nutrition {
+            val fragment = Nutrition()
             val args = Bundle()
             args.putParcelable(ARG_PRODUCT, product)
             fragment.arguments = args
@@ -71,10 +92,10 @@ class Fragment2 : BaseFragment(){
 
 }
 
-class Fragment3 : BaseFragment(){
+class InfoN : BaseFragment(){
     companion object {
-        fun newInstance(product: Product) : Fragment3 {
-            val fragment = Fragment3()
+        fun newInstance(product: Product) : InfoN {
+            val fragment = InfoN()
             val args = Bundle()
             args.putParcelable(ARG_PRODUCT, product)
             fragment.arguments = args
@@ -89,4 +110,26 @@ class Fragment3 : BaseFragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
+}
+
+class LastSearch : BaseFragment(){
+    companion object {
+        fun newInstance(product: Product) : InfoN {
+            val fragment = InfoN()
+            val args = Bundle()
+            args.putParcelable(ARG_PRODUCT, product)
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.activity_main, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+
 }
