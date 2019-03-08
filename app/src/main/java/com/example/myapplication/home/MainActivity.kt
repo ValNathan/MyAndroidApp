@@ -58,15 +58,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         main_navigation.selectedItemId = R.id.main_navbar_history
-
-
-
     }
 
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+        var barcode = data?.getStringExtra("SCAN_RESULT")
+
+        val intentDetails = Intent(this, DetailsActivity::class.java)
+        intentDetails.putExtra("barcode", barcode)
+        val requestCode2 = 101
+        startActivityForResult(intentDetails, requestCode2)
+
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -77,14 +84,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        when(item?.itemId){
-            R.id.barcode_menu -> {
-                val intent = Intent()
-                intent.setAction("com.google.zxing.client.android.SCAN")
-                intent.putExtra(" SCAN_FORMATS", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODABAR")
-                val requestCode = 100
-                startActivityForResult(intent, requestCode)
-                return true
+        when(item!!.itemId){
+            R.id.barcode_menu ->{
+                startActivityForResult(Intent("com.google.zxing.client.android.SCAN").apply {
+                    putExtra("SCAN_FORMATS", "EAN_13")
+                }, 100)
             }
         }
 

@@ -39,7 +39,9 @@ data class ServerResponse(
         @SerializedName("quantity")
         val quantity: String?,
         @SerializedName("traces")
-        val traces: List<String?>?
+        val traces: List<String?>?,
+        @SerializedName("calories")
+        val calories: String?
     ) {
 
         fun toProduct() : Product {
@@ -54,7 +56,8 @@ data class ServerResponse(
                 Vendu = manufacturingCountries,
                 ingredigent = ingredients,
                 subsAllergene = allergens,
-                additifs = additives
+                additifs = additives,
+                calorie = calories
 
 
 

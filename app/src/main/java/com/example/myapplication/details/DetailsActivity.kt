@@ -14,6 +14,10 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.myapplication.NetworkManager
 import com.example.myapplication.Product
 import com.example.myapplication.R
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_details_pager.*
 import kotlinx.android.synthetic.main.fiche.*
 import kotlinx.coroutines.*
@@ -23,7 +27,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if(!intent.hasExtra("product")){
+        if(!intent.hasExtra("barcode")){
             throw Exception("missing product")
         }
 
@@ -35,7 +39,8 @@ class DetailsActivity : AppCompatActivity() {
         supportActionBar?.setTitle(R.string.details)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val barcode = intent.getStringExtra("product")
+        val barcode = intent.getStringExtra("barcode")
+        val database = FirebaseDatabase.getInstance()
 
         GlobalScope.launch(Dispatchers.Main) {
             viewpager.visibility = View.GONE
@@ -48,6 +53,12 @@ class DetailsActivity : AppCompatActivity() {
                 progressbar.visibility = View.GONE
                 viewpager.visibility = View.VISIBLE
 
+                val map = hashMapOf("Name" to product.nom, "BarCode" to product.barcode, "Brand" to product.marque, "Nutriscore" to product.nutriscore, "Cal" to product.calorie, "Image" to product.urlImage)
+                val task = database.getReference("Users/user_id/history/${System.currentTimeMillis()}").updateChildren(map as Map<String, Any>)
+
+                task.addOnSuccessListener{}
+                task.addOnCompleteListener{}
+                task.addOnFailureListener{}
 
 
                 /*titre.text = product.nom

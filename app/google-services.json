@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "779180282419",
+    "firebase_url": "https://foodfacts-66d34.firebaseio.com",
+    "project_id": "foodfacts-66d34",
+    "storage_bucket": "foodfacts-66d34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779180282419:android:13c3c6a65bcbec53",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779180282419-70pqknu1ipg3viv36gi2rlb1pgh5el7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzYazKLg1ftIih7zlae8eUvpM5cB9af74"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

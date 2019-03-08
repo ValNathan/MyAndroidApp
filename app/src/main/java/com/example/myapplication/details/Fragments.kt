@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.Product
 import com.example.myapplication.R
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fiche.*
+import java.io.File
 import java.lang.Exception
 
 open class BaseFragment : Fragment(){
@@ -56,13 +58,36 @@ class Fiche : BaseFragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Picasso.get().load(product.urlImage).into(image)
+
         titre.text = product.nom
+        cassegrain.text = product.marque.toString()
         codebarre.text = getString(R.string.barcode, product.barcode).toHtml()
         quantite.text = getString(R.string.quantity, product.Quantite).toHtml()
         venduen.text = getString(R.string.sold, product.Vendu).toHtml()
         ingredients.text = getString(R.string.ingredients, product.ingredigent).toHtml()
         substances.text = getString(R.string.substances, product.subsAllergene).toHtml()
         additifs.text = getString(R.string.additives, product.additifs).toHtml()
+
+
+
+        if(product.nutriscore == "a"){
+            Picasso.get().load(R.drawable.nutri_score_a).into(nutri_score)
+        }
+        else if(product.nutriscore == "b"){
+            Picasso.get().load(R.drawable.nutri_score_b).into(nutri_score)
+        }
+        else if(product.nutriscore == "c"){
+            Picasso.get().load(R.drawable.nutri_score_c).into(nutri_score)
+        }
+        else if(product.nutriscore == "d"){
+            Picasso.get().load(R.drawable.nutri_score_d).into(nutri_score)
+        }
+        else{
+            Picasso.get().load(R.drawable.nutri_score_e).into(nutri_score)
+        }
+
+
     }
 
     fun String.toHtml(): Spanned {
